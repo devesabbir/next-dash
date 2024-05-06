@@ -1,25 +1,25 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 
-// This function can be marked `async` if using `await` inside
 export function middleware(request) {
   const url = request.nextUrl.clone();
   const { pathname } = url;
 
-  // Check if the requested path starts with "/dashboard"
   if (pathname.startsWith("/dashboard")) {
-    // Implement your logic to check login status (replace with your actual logic)
-    const isLoggedIn =
-      cookies().get("login")?.value ===
-      "true"; /* Your logic to check user login state */
+    const isLoggedIn = cookies().get("login")?.value === "true";
 
     if (!isLoggedIn) {
-      // Redirect to /login if not logged in
       return NextResponse.redirect(new URL("/login", request.url));
     }
   }
 
-  // Pass through the request for other routes
+  if (pathname.startsWith("/login")) {
+    const isLoggedIn = cookies().get("login")?.value === "true";
+    if (isLoggedIn) {
+      return NextResponse.redirect(new URL("/dashboard", request.url));
+    }
+  }
+
   return NextResponse.next();
 }
 
