@@ -39,12 +39,6 @@ export const menuItems = [
       {
         name: "Security",
         path: "/dashboard/settings/security",
-        items: [
-          {
-            name: "Account Privacy",
-            path: "/dashboard/settings/security/privacy",
-          },
-        ],
       },
       {
         name: "Notifications",

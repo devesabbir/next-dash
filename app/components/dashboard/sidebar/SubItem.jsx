@@ -1,7 +1,6 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import SidebarItem from "./SidebarItem";
 import { ChevronDown } from "lucide-react";
 
 function SubItem({ item }) {
