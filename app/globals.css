@@ -20,4 +20,8 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .active {
+    @apply text-orange-400;
+  }
 }

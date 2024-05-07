@@ -1,52 +1,54 @@
-export const menus = [
+import {
+  LayoutDashboard,
+  BadgeDollarSign,
+  CircleUserRound,
+  Settings,
+  WalletCards,
+} from "lucide-react";
+
+export const menuItems = [
   {
-    title: "Title - 1",
-    children: [
-      {
-        title: "child -1",
-        path: "/dashboard",
-      },
-      {
-        title: "child -2",
-        path: "/dashboard/users",
-      },
-      {
-        title: "child -3",
-        path: "/dashboard/profile",
-      },
-    ],
+    name: "Dashboard",
+    path: "/dashboard",
+    icon: LayoutDashboard,
   },
   {
-    title: "Title - 2",
-    children: [
-      {
-        title: "child -1",
-        path: "/dashboard",
-      },
-      {
-        title: "child -2",
-        path: "/dashboard/users",
-      },
-      {
-        title: "child -3",
-        path: "/dashboard/profile",
-      },
-    ],
+    name: "Profile",
+    path: "/dashboard/profile",
+    icon: BadgeDollarSign,
   },
   {
-    title: "Title - 3",
-    children: [
+    name: "Users",
+    path: "/dashboard/users",
+    icon: WalletCards,
+  },
+  {
+    name: "Accounts",
+    path: "/dashboard/accounts",
+    icon: CircleUserRound,
+  },
+  {
+    name: "Settings",
+    path: "/dashboard/settings",
+    icon: Settings,
+    items: [
       {
-        title: "child -1",
-        path: "/dashboard",
+        name: "General",
+        path: "/dashboard/settings",
       },
       {
-        title: "child -2",
-        path: "/dashboard/users",
+        name: "Security",
+        path: "/dashboard/settings/security",
+        items: [
+          {
+            name: "Account Privacy",
+            path: "/dashboard/settings/security/privacy",
+          },
+        ],
       },
       {
-        title: "child -3",
-        path: "/dashboard/profile",
+        name: "Notifications",
+        path: "/dashboard/settings/notifications",
       },
     ],
   },
